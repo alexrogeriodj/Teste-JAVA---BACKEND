@@ -1,0 +1,11 @@
+2 - Com base na questão anterior (script dos filmes), desenvolva uma query capaz de
+retornar os filmes em que “Keanu Reeves” já participou.
+
+SELECT filme.titulo
+FROM filme, filme_ator, ator
+WHERE filme.filme_id = 
+filme_ator.filme_id
+AND ator.ator_id = 
+filme_ator.ator_id
+AND ator.primeiro_nome = 'Keanu'
+AND ator.ultimo_nome='Reeves'
