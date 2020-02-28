@@ -1,0 +1,57 @@
+2 - Escreva um código que demonstre a utilização de um Map.
+
+import java.util.HashMap;
+import java.util.Map;
+ 
+public class TestaInterfaceMap {
+ 
+  public static void main(String[] args) {
+   
+    Map<integer, string=""> mapaNomes = new HashMap<integer, string="">(); 
+    mapaNomes.put(1, "Alex Rogério");
+    mapaNomes.put(2, "Wang Jiao Luo XinXin");
+    mapaNomes.put(3, "Brasil");
+ 
+System.out.println(mapaNomes);
+     
+    //resgatando o nome da posição 2
+    System.out.println(mapaNomes.get(2));
+     
+  }
+}
+
+
+
+Código completo
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.Map.Entry;
+ 
+public class TestaInterfaceMap {
+ 
+  public static void main(String[] args) {
+   
+    Map<integer, string=""> mapaNomes = new HashMap<integer, string="">(); 
+    mapaNomes.put(1, "Alex Rogério");
+    mapaNomes.put(2, "Wang Jiao Luo XinXin");
+    mapaNomes.put(3, "Brasil");
+     
+    //Collection<integer> conjNomes = mapaNomes.keySet();
+     
+    Set<entry<integer, string="">> set = mapaNomes.entrySet();
+    Iterator it = set.iterator();
+     
+    System.out.println("Código\t\tValor");
+     
+                 //getKey() - recupera a chave do mapa 
+    //getValue() - recupera o valor do mapa
+ 
+    while(it.hasNext()){
+      Entry<integer, string=""> entry = (Entry)it.next();
+      System.out.println(entry.getKey() + "\t\t"+entry.getValue());
+    }
+  }
+}
