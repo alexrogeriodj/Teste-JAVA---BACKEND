@@ -1,0 +1,55 @@
+1 - Construa um modelo capaz de armazenar as informações de um filme e os atores dele,
+lembrando apenas que um mesmo ator pode participar de diferentes filmes.
+
+CREATE TABLE Ator ( 
+	id           	int(11) NULL,
+	id_filme    	int(11) NULL,
+	valor_aluguel	int(11) NULL,
+	data_Ano	datetime NULL,
+	PRIMARY KEY(id)
+)
+
+
+ALTER TABLE `Ator`
+	ADD CONSTRAINT `fk_id_filmes`
+	FOREIGN KEY(`id_filme`)
+	REFERENCES `filmes`(`id`)
+	
+INSERT INTO alugueis(id, id_filme, valor_aluguel, data_aluguel) 
+    VALUES(1, 1, 2, '2008-09-10 5:29:57.0')
+GO
+INSERT INTO alugueis(id, id_filme, valor_aluguel, data_aluguel) 
+    VALUES(2, 1, 1, '2008-09-13 5:29:57.0')
+GO
+INSERT INTO alugueis(id, id_filme, valor_aluguel, data_aluguel) 
+    VALUES(3, 1, 1, '2008-09-16 5:29:57.0')
+GO
+INSERT INTO alugueis(id, id_filme, valor_aluguel, data_aluguel) 
+    VALUES(4, 1, 1, '2008-09-18 5:29:57.0')
+GO
+INSERT INTO alugueis(id, id_filme, valor_aluguel, data_aluguel) 
+    VALUES(5, 1, 1, '2008-09-20 5:29:57.0')
+GO
+	
+	
+CREATE TABLE filmes ( 
+    id   	int(11) NOT NULL DEFAULT '0',
+    custo	int(11) NOT NULL,
+    categoria int (11) NOT NULL,
+    data_Ano	datetime NULL,
+    PRIMARY KEY(id)
+)
+
+INSERT INTO filmes(id, custo) 
+    VALUES(1, 4)
+GO
+
+SELECT * FROM ator;
+
+SELECT filme.titulo, categoria.nome
+FROM filme, filme_categoria, categoria
+WHERE filme.filme_id = 
+filme_categoria.filme_id
+AND categoria.categoria_id = 
+filme_categoria.categoria_id
+ORDER BY filme.titulo
