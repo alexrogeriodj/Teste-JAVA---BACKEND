@@ -1,0 +1,30 @@
+JAVA
+
+1 - Escreva um código que a partir da seguinte lista, imprima apenas as palavras iniciadas com a letra “a”, independente se maiuscula ou minuscula.
+“Pedro”, “Maria”, “Joana”, “André”, “Carlos”, “anna”, “augusto”, “Henrique”;
+
+
+class Nome{
+	public static void main(String args[]){
+		StringBuffer palavra = new StringBuffer();
+		String nome = args[0];		
+		for(int i = 0; i<nome.length();i++){
+			palavra.append(nome.charAt(i));
+			System.out.println(palavra.toString());
+		}						
+		for(int x = palavra.length()-1; x>=0; x--){			
+			palavra.deleteCharAt(x);
+			System.out.println(palavra.toString());
+                 Scanner entrada = new Scanner(System.in);
+
+                System.out.print("Digite uma String: ");
+                String palavra = entrada.nextLine();
+
+                palavra.toLowerCase(); // Esta instrução não altera a palavra digitada.
+
+               System.out.println("\nPalavra digitada: " + palavra); // Irá exibir a palavra exatamente como ela foi digitada.
+               System.out.println("Palavra alterada: " + palavra.toLowerCase()); // Irá exibir a palavra com todas as letras minúsculas.
+               System.out.println("Palavra digitada: " + palavra); // Veja novamente que a palavra não é alterada.
+		}
+	}
+}
